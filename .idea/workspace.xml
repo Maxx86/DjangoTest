@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856a2056-94dd-491c-94c6-1adbecc8cc6b" name="Changes" comment="TestCommit" />
+    <list default="true" id="856a2056-94dd-491c-94c6-1adbecc8cc6b" name="Changes" comment="TestCommit2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/website/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/website/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/website/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +47,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="32k6OJ0xa25YIyQPkCqYsaoaR4Q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -130,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759855363592</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="TestCommit2">
+      <option name="closed" value="true" />
+      <created>1759855541738</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759855541738</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,7 +173,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TestCommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestCommit" />
+    <MESSAGE value="TestCommit2" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestCommit2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
