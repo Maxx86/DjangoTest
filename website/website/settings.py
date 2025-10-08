@@ -23,7 +23,8 @@ INSTALLED_APPS = [
     'cars',
     'weekdays',
     'crispy_forms',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
+#    'accounts'
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
@@ -101,3 +102,5 @@ LOGIN_URL = 'blog_login'
 # LOGOUT_URL = 'blog_logout'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = "home"
+
+# AUTH_USER_MODEL = 'accounts.User'

@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="856a2056-94dd-491c-94c6-1adbecc8cc6b" name="Changes" comment="Commit">
-      <change beforePath="$PROJECT_DIR$/website/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/website/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0002_alter_category_options_alter_post_options_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0003_post_auther.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0004_post_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0005_category_slug_post_slug_alter_category_name_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0006_alter_category_slug_alter_post_slug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/migrations/0007_tag_post_tags.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/blog/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/blog/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/blog/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/blog/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/registration/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/registration/logged_out.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/website/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/website/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759940802275</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1759941545365</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1759941545365</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

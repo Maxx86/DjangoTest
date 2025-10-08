@@ -1,12 +1,13 @@
 from django.contrib.auth import logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.paginator import Paginator
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
-from django.core.paginator import Paginator
 from django.utils.timezone import now
+from django.views.generic import CreateView
 
-from .models import Post, Category
 from .forms import PostForm
+from .models import Post, Category
 
 
 def get_categories():
@@ -64,19 +65,37 @@ def search(request):
     return render(request, "blog/index.html", context=context)
 
 
-@login_required
-def create(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.published_date = now()
-            post.auther = request.user
-            post.save()
-    formCreate = PostForm()
-    context = {'formCreate': formCreate}
-    context.update(get_categories())
-    return render(request, "blog/create.html", context=context)
+# @login_required
+# def create(request):
+#     if request.method == 'POST':
+#         form = PostForm(request.POST)
+#         if form.is_valid():
+#             post = form.save(commit=False)
+#             post.published_date = now()
+#             post.auther = request.user
+#             post.save()
+#     formCreate = PostForm()
+#     context = {'formCreate': formCreate}
+#     context.update(get_categories())
+#     return render(request, "blog/create.html", context=context)
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = "blog/create.html"
+
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.published_date = now()
+        post.auther = self.request.user
+        post.save()
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(get_categories())
+
+        return context
 
 
 def custom_logout_view(request):

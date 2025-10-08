@@ -1,6 +1,9 @@
+from asyncio import AbstractEventLoop
+
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.utils.text import slugify
+
 
 
 class Category(models.Model):
@@ -59,3 +62,23 @@ class Post(models.Model):
     class Meta:
         verbose_name = "Публікація"
         verbose_name_plural = "Публікації"
+
+
+# class User(AbstractUser):
+#     phone = models.CharField(max_length=20, blank=True)
+#     city = models.CharField(max_length=100, blank=True)
+#     birth_date = models.DateTimeField(null=True, blank=True)
+#     avatar = models.URLField(null=True, blank=True)
+#
+#     def __str__(self):
+#         return self.username
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=20, blank=True)
+    city = models.CharField(max_length=100, blank=True)
+    birth_date = models.DateTimeField(null=True, blank=True)
+    avatar = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return f'Profile {self.user.username}'
