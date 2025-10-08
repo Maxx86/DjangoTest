@@ -1,5 +1,7 @@
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.utils.timezone import now
 
@@ -62,14 +64,21 @@ def search(request):
     return render(request, "blog/index.html", context=context)
 
 
+@login_required
 def create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.published_date = now()
+            post.auther = request.user
             post.save()
     formCreate = PostForm()
     context = {'formCreate': formCreate}
     context.update(get_categories())
     return render(request, "blog/create.html", context=context)
+
+
+def custom_logout_view(request):
+    logout(request)
+    return redirect('home')

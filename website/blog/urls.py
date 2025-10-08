@@ -10,6 +10,6 @@ urlpatterns = [
     path('category/<slug:slug>/', views.category, name="category"),
     path('search/', views.search, name="search"),
     path('create/', views.create, name="create"),
-    path('login/', LoginView.as_view(), name='blog_login'),
-    path('logout/', LogoutView.as_view(), name='blog_logout')
+    path('login/', LoginView.as_view(template_name='registration/login.html'), name='blog_login'),
+    path('logout/', views.custom_logout_view, name='blog_logout')
 ]
