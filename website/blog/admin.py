@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Post
+from .models import Category, Post, Tag
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -9,4 +9,8 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+    filter_horizontal = ('tags',)
 
+@admin.register(Tag)
+class CategoryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
