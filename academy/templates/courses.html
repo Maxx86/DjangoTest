@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>📘 Курси</h2>
+<ul class="list-group mt-3">
+  {% for c in courses %}
+    <li class="list-group-item">
+      <b>{{ c.name }}</b> — {{ c.teacher.first_name }} {{ c.teacher.last_name }}<br>
+      Початок: {{ c.start }} | Кінець: {{ c.end }}
+    </li>
+  {% empty %}
+    <p>Немає курсів</p>
+  {% endfor %}
+</ul>
+{% endblock %}

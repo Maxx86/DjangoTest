@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>👩‍🏫 Викладачі</h2>
+<ul class="list-group mt-3">
+  {% for t in teachers %}
+    <li class="list-group-item">
+      <b>{{ t.first_name }} {{ t.last_name }}</b><br>
+      Email: {{ t.email }} | Телефон: {{ t.phone }}
+    </li>
+  {% empty %}
+    <p>Немає викладачів</p>
+  {% endfor %}
+</ul>
+{% endblock %}

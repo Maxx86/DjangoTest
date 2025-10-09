@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>🎓 Студенти</h2>
+<ul class="list-group mt-3">
+  {% for s in students %}
+    <li class="list-group-item">
+      <b>{{ s.first_name }} {{ s.last_name }}</b> — {{ s.email }}
+      {% if s.url %}
+        <br>Соцмережа: <a href="{{ s.url }}" target="_blank">{{ s.url }}</a>
+      {% endif %}
+    </li>
+  {% empty %}
+    <p>Немає студентів</p>
+  {% endfor %}
+</ul>
+{% endblock %}
