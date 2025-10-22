@@ -14,4 +14,6 @@ urlpatterns = [
     path('logout/', views.custom_logout_view, name='blog_logout'),
     path('tag/<slug:slug>/', views.tag, name='tag'),
     path('subscribe/', views.subscribe, name='subscribe'),
+    path('register/', views.register, name='register'),
+    path('profile/', views.profile, name='profile'),
 ]

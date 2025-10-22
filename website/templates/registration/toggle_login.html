@@ -1,16 +1,22 @@
 {% if user.is_authenticated %}
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="{% url 'blog_logout' %}" class="btn btn-danger navbar-btn">Logout</a> </li>
+        <li>
+            <a href="{% url 'profile' %}" class="btn btn-info navbar-btn">Профіль</a>
+        </li>
+        <li>
+            <a href="{% url 'blog_logout' %}" class="btn btn-danger navbar-btn">Вийти</a>
+        </li>
     </ul>
-{%else%}
+{% else %}
     <form class="navbar-form navbar-right" action="{% url 'blog_login' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
-            <input type="text" placeholder="login" name="username" class="form-control">
+            <input type="text" placeholder="Логін" name="username" class="form-control">
         </div>
         <div class="form-group">
-            <input type="password" placeholder="password" name="password" class="form-control">
+            <input type="password" placeholder="Пароль" name="password" class="form-control">
         </div>
-        <button type="submit" class="btn btn-success">Sign In</button>
+        <button type="submit" class="btn btn-success">Увійти</button>
+        <a href="{% url 'register' %}" class="btn btn-primary">Реєстрація</a>
     </form>
 {% endif %}

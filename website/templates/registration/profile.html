@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+{% block main %}
+<h2>Профіль користувача</h2>
+<p><strong>Ім’я:</strong> {{ request.user.username }}</p>
+<p><strong>Email:</strong> {{ request.user.email }}</p>
+{% if profile.phone %}
+<p><strong>Телефон:</strong> {{ profile.phone }}</p>
+{% endif %}
+{% if profile.city %}
+<p><strong>Місто:</strong> {{ profile.city }}</p>
+{% endif %}
+{% endblock %}

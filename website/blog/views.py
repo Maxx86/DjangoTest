@@ -1,4 +1,6 @@
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -137,3 +139,25 @@ def subscribe(request):
         form = SubscribeForm()
     context = {'form': form, 'message': message}
     return render(request, "blog/subscribe.html", context)
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('profile')
+    else:
+        form = UserCreationForm()
+
+    context = {'form': form}
+    return render(request, 'registration/register.html', context)
+
+
+@login_required
+def profile(request):
+    context = {
+        'user': request.user,
+    }
+    return render(request, 'registration/profile.html', context)

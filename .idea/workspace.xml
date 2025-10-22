@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="856a2056-94dd-491c-94c6-1adbecc8cc6b" name="Changes" comment="ДЗ Url та фільтрація">
+    <list default="true" id="856a2056-94dd-491c-94c6-1adbecc8cc6b" name="Changes" comment="ДЗ Форми та авторизація">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/blog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/blog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/blog/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/blog/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/blog/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/website/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/blog/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/registration/toggle_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/registration/toggle_login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761127575423</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ДЗ Форми та авторизація">
+      <option name="closed" value="true" />
+      <created>1761129555039</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1761129555039</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +279,8 @@
     <MESSAGE value="ДЗ Моделі" />
     <MESSAGE value="ДЗ Запити до бази даних" />
     <MESSAGE value="ДЗ Url та фільтрація" />
-    <option name="LAST_COMMIT_MESSAGE" value="ДЗ Url та фільтрація" />
+    <MESSAGE value="ДЗ Форми та авторизація" />
+    <option name="LAST_COMMIT_MESSAGE" value="ДЗ Форми та авторизація" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
