@@ -7,7 +7,7 @@ from django.utils.timezone import now
 from django.views.generic import CreateView
 
 from .forms import PostForm
-from .models import Post, Category
+from .models import Post, Category, Comment, Tag
 
 
 def get_categories():
@@ -41,9 +41,17 @@ def contact(request):
 
 def post(request, slug=None):
     post = get_object_or_404(Post, slug=slug)
-    context = {'post': post}
-    context.update(get_categories())
-    return render(request, "blog/post.html", context=context)
+
+    if request.method == "POST":
+        author = request.POST.get("author")
+        text = request.POST.get("text")
+        if author and text:
+            Comment.objects.create(post=post, author=author, text=text)
+            return redirect("post", slug=slug)
+
+    comments = post.comments.all().order_by("-created_at")
+    context = {"post": post, "comments": comments}
+    return render(request, "blog/post.html", context)
 
 
 def category(request, slug=None):
@@ -101,3 +109,17 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 def custom_logout_view(request):
     logout(request)
     return redirect('home')
+
+
+def tag(request, slug=None):
+    tag = get_object_or_404(Tag, slug=slug)
+    posts = Post.objects.filter(tags=tag).order_by("-published_date")
+
+    paginator = Paginator(posts, 2)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {"posts": posts, "page_obj": page_obj, "tag": tag}
+    context.update(get_categories())
+    return render(request, "blog/index.html", context=context)
+
