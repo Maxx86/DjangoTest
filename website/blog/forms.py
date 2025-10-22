@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from .models import Post, Profile
+from .models import Post, Profile, Subscriber
 
 
 
@@ -22,3 +22,13 @@ class RegisterForm(UserCreationForm):
         fields = ('username', 'email', 'first_name', 'last_name', 'phone', 'city', 'birth_date', 'avatar')
 
 
+class SubscribeForm(forms.ModelForm):
+    class Meta:
+        model = Subscriber
+        fields = ['email']
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Введіть ваш email'
+            })
+        }

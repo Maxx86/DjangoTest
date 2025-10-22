@@ -6,8 +6,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.timezone import now
 from django.views.generic import CreateView
 
-from .forms import PostForm
-from .models import Post, Category, Comment, Tag
+from .forms import PostForm, SubscribeForm
+from .models import Post, Category, Comment, Tag, Subscriber
 
 
 def get_categories():
@@ -123,3 +123,17 @@ def tag(request, slug=None):
     context.update(get_categories())
     return render(request, "blog/index.html", context=context)
 
+
+def subscribe(request):
+    message = ""
+    if request.method == "POST":
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            message = "✅ Ви успішно підписалися на новини!"
+        else:
+            message = "⚠️ Цей email вже підписаний або некоректний."
+    else:
+        form = SubscribeForm()
+    context = {'form': form, 'message': message}
+    return render(request, "blog/subscribe.html", context)

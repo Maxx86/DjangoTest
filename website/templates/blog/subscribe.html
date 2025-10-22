@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block main %}
+<div class="container mt-4">
+    <h2>📨 Підписка на новини</h2>
+    <p>Отримуйте найсвіжіші оновлення з нашого блогу!</p>
+    <hr>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Підписатися</button>
+    </form>
+
+    {% if message %}
+        <div class="alert alert-info mt-3">{{ message }}</div>
+    {% endif %}
+</div>
+{% endblock %}

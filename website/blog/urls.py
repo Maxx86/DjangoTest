@@ -13,4 +13,5 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='registration/login.html'), name='blog_login'),
     path('logout/', views.custom_logout_view, name='blog_logout'),
     path('tag/<slug:slug>/', views.tag, name='tag'),
+    path('subscribe/', views.subscribe, name='subscribe'),
 ]
